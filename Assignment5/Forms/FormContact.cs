@@ -5,23 +5,26 @@
 /// </summary>
 /// 
 
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+using Assignment5.Classes;
+using Assignment5.Enums;
 
 namespace Assignment5.Forms
 {
     public partial class FormContact : Form
     {
-        public FormContact()
+        private Contact contact;
+        public FormContact(Contact contact)
         {
             InitializeComponent();
+
+            this.contact = contact;
+
+            InitializeGUI();
+        }
+
+        private void InitializeGUI()
+        {
+            cmbCountry.DataSource = Enum.GetValues(typeof(Country));
         }
     }
 }
