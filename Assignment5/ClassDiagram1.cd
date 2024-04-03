@@ -3,9 +3,51 @@
   <Class Name="Assignment5.Forms.FormMain">
     <Position X="0.5" Y="1" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AQAEAAAIACAAAAAQAACCAAIGEBAAAAAAAACAIAAAAgA=</HashCode>
+      <HashCode>AQAEAAAIACAAAAAQCACCAAIGEBAAAAAAAACAIAAAAgA=</HashCode>
       <FileName>Forms\FormMain.cs</FileName>
     </TypeIdentifier>
   </Class>
+  <Class Name="Assignment5.Forms.FormContact">
+    <Position X="2.25" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAIIAAECAAFAACAACJAAwCIwBBggAoABAAAAAAQgQ=</HashCode>
+      <FileName>Forms\FormContact.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Assignment5.Classes.Email">
+    <Position X="5.75" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\Contact.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Assignment5.Classes.Phone">
+    <Position X="7.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\Contact.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Assignment5.Classes.Address">
+    <Position X="5.75" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\Contact.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Assignment5.Classes.Contact">
+    <Position X="7.5" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAQACAABAACAAAAAAAAAAAAIAAAAAAAAACAAAAAA=</HashCode>
+      <FileName>Classes\Contact.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="Assignment5.Enums.Country">
+    <Position X="4" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>qnFwbLfTIzrXut0A34Vk1nZ6Bhh6c7hWEzP2rB1D1b4=</HashCode>
+      <FileName>Enums\Countries.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>

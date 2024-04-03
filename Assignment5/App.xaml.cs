@@ -1,7 +1,4 @@
 ﻿using Assignment5.Forms;
-using System.Configuration;
-using System.Data;
-using System.Windows;
 
 namespace Assignment5
 {

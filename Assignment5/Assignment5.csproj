@@ -10,8 +10,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Classes\" />
-    <Folder Include="Enums\" />
     <Folder Include="Wpf\" />
   </ItemGroup>
 
