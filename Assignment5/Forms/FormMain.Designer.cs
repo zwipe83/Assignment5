@@ -34,12 +34,12 @@
             lblOfficeEmail = new Label();
             lstContacts = new ListBox();
             grpContactDetails = new GroupBox();
+            lblContactPhoneNumbers = new Label();
+            lblContactEmails = new Label();
+            lblContactAddress = new Label();
             btnAddContact = new Button();
             btnEditContact = new Button();
             btnDeleteContact = new Button();
-            lblContactAddress = new Label();
-            lblContactEmails = new Label();
-            lblContactPhoneNumbers = new Label();
             grpContactDetails.SuspendLayout();
             SuspendLayout();
             // 
@@ -100,6 +100,33 @@
             grpContactDetails.TabStop = false;
             grpContactDetails.Text = "Contact details";
             // 
+            // lblContactPhoneNumbers
+            // 
+            lblContactPhoneNumbers.AutoSize = true;
+            lblContactPhoneNumbers.Location = new Point(6, 233);
+            lblContactPhoneNumbers.Name = "lblContactPhoneNumbers";
+            lblContactPhoneNumbers.Size = new Size(152, 15);
+            lblContactPhoneNumbers.TabIndex = 0;
+            lblContactPhoneNumbers.Text = "<Contact phone numbers>";
+            // 
+            // lblContactEmails
+            // 
+            lblContactEmails.AutoSize = true;
+            lblContactEmails.Location = new Point(6, 132);
+            lblContactEmails.Name = "lblContactEmails";
+            lblContactEmails.Size = new Size(102, 15);
+            lblContactEmails.TabIndex = 0;
+            lblContactEmails.Text = "<Contact emails>";
+            // 
+            // lblContactAddress
+            // 
+            lblContactAddress.AutoSize = true;
+            lblContactAddress.Location = new Point(6, 19);
+            lblContactAddress.Name = "lblContactAddress";
+            lblContactAddress.Size = new Size(108, 15);
+            lblContactAddress.TabIndex = 0;
+            lblContactAddress.Text = "<Contact address>";
+            // 
             // btnAddContact
             // 
             btnAddContact.Location = new Point(44, 484);
@@ -108,6 +135,7 @@
             btnAddContact.TabIndex = 3;
             btnAddContact.Text = "Add";
             btnAddContact.UseVisualStyleBackColor = true;
+            btnAddContact.Click += btnAddContact_Click;
             // 
             // btnEditContact
             // 
@@ -126,33 +154,6 @@
             btnDeleteContact.TabIndex = 3;
             btnDeleteContact.Text = "Delete";
             btnDeleteContact.UseVisualStyleBackColor = true;
-            // 
-            // lblContactAddress
-            // 
-            lblContactAddress.AutoSize = true;
-            lblContactAddress.Location = new Point(6, 19);
-            lblContactAddress.Name = "lblContactAddress";
-            lblContactAddress.Size = new Size(108, 15);
-            lblContactAddress.TabIndex = 0;
-            lblContactAddress.Text = "<Contact address>";
-            // 
-            // lblContactEmails
-            // 
-            lblContactEmails.AutoSize = true;
-            lblContactEmails.Location = new Point(6, 132);
-            lblContactEmails.Name = "lblContactEmails";
-            lblContactEmails.Size = new Size(102, 15);
-            lblContactEmails.TabIndex = 0;
-            lblContactEmails.Text = "<Contact emails>";
-            // 
-            // lblContactPhoneNumbers
-            // 
-            lblContactPhoneNumbers.AutoSize = true;
-            lblContactPhoneNumbers.Location = new Point(6, 233);
-            lblContactPhoneNumbers.Name = "lblContactPhoneNumbers";
-            lblContactPhoneNumbers.Size = new Size(152, 15);
-            lblContactPhoneNumbers.TabIndex = 0;
-            lblContactPhoneNumbers.Text = "<Contact phone numbers>";
             // 
             // FormMain
             // 
