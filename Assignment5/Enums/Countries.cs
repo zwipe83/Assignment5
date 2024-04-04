@@ -1,4 +1,11 @@
-﻿namespace Assignment5.Enums
+﻿/// <summary>
+/// Filename: Countries.cs
+/// Created on: 2024-04-02 00:00:00
+/// Author: Samuel Jeffman
+/// </summary>
+/// 
+
+namespace Assignment5.Enums
 {
     public enum Country
     {

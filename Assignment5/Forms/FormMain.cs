@@ -1,5 +1,5 @@
 ﻿/// <summary>
-/// Filename: Program.cs
+/// Filename: FormMain.cs
 /// Created on: 2024-04-02 00:00:00
 /// Author: Samuel Jeffman
 /// </summary>
@@ -18,7 +18,7 @@ namespace Assignment5.Forms
 
         private void btnAddContact_Click(object sender, EventArgs e)
         {
-            Contact contact = new Contact();
+            Contact contact = new Contact("sjeffman83@outlook.com");
             FormContact frmContact = new FormContact(contact);
             frmContact.ShowDialog();
         }
