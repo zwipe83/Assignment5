@@ -6,6 +6,7 @@
 /// 
 
 using static Assignment5.Helpers.Debugger;
+using Assignment5.Enums;
 
 namespace Assignment5.Classes
 {
@@ -88,10 +89,15 @@ namespace Assignment5.Classes
         /// 
         /// </summary>
         /// <returns></returns>
-        /// <exception cref="NotImplementedException"></exception>
-        private bool CheckData()
+        public bool CheckData()
         {
-            throw new NotImplementedException();
+            bool ok = (!string.IsNullOrWhiteSpace(FirstName) || !string.IsNullOrWhiteSpace(LastName))
+                && !string.IsNullOrWhiteSpace(AddressData.City)
+                && Enum.IsDefined(typeof(Country), (int)AddressData.Country); //Probably not entirely necessary
+
+            DEBUG_PRINT($"CheckData() OK: {ok}");
+
+            return ok;
         }
         /// <summary>
         /// 
@@ -108,7 +114,7 @@ namespace Assignment5.Classes
         /// <returns></returns>
         public override string ToString()
         {
-            string contactData = $"First name: {FirstName}, last name: {LastName} - Address: {AddressData} - Email: {EmailData}";
+            string contactData = $"First name: {FirstName}, last name: {LastName} {AddressData} {EmailData} {PhoneData}";
 
             DEBUG_PRINT($"Contact.ToString(): {contactData}");
 
