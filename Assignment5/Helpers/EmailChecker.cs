@@ -21,7 +21,7 @@ namespace Assignment5.Helpers
 
                 Match match = regex.Match(email);
 
-                return match.Success;
+                return match.Success || email == string.Empty;
             }
             return false;
         }
