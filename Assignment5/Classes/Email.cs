@@ -83,9 +83,11 @@ namespace Assignment5.Classes
                 }
                 else
                 {
-                    //TODO: Throw exception?
+                    //FIXED: Throw exception?
 
                     DEBUG_PRINT($"EmailAddress.Address - Incorrect address: {value}");
+
+                    throw new Exception($"Invalid email address: {value}");
                 }
             }
         }
@@ -103,7 +105,7 @@ namespace Assignment5.Classes
             get { return officeMail; }
 
             set
-            {
+            { //TODO: Optimize so Work and Private use a common setter function
                 if (IsValidAddress(value))
                 {
                     officeMail = value;
@@ -111,8 +113,10 @@ namespace Assignment5.Classes
                 }
                 else
                 {
-                    //TODO: Throw exception?
+                    //FIXED: Throw exception?
                     DEBUG_PRINT($"EmailAddress.Address - Incorrect address: {value}");
+
+                    throw new Exception($"Invalid email address: {value}");
                 }
             }
         }
