@@ -145,6 +145,7 @@
             btnEditContact.TabIndex = 3;
             btnEditContact.Text = "Edit";
             btnEditContact.UseVisualStyleBackColor = true;
+            btnEditContact.Click += btnEditContact_Click;
             // 
             // btnDeleteContact
             // 

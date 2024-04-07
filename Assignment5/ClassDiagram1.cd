@@ -10,36 +10,36 @@
   <Class Name="Assignment5.Forms.FormContact">
     <Position X="2.25" Y="1" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AACAIIAAECAAFAACAACJAAwCIwBBggAoABAAAAAAQgQ=</HashCode>
+      <HashCode>AACAIIABECAAFAACAACJAAwCIwBBggAoABIAAABAQgQ=</HashCode>
       <FileName>Forms\FormContact.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Assignment5.Classes.Email">
-    <Position X="5.75" Y="5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Classes\Contact.cs</FileName>
-    </TypeIdentifier>
-  </Class>
   <Class Name="Assignment5.Classes.Phone">
-    <Position X="7.5" Y="5" Width="1.5" />
+    <Position X="7.5" Y="9.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Classes\Contact.cs</FileName>
+      <HashCode>CAAAAAAAIAAAAAAEAAAAAAAAAAAAIEAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\Phone.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Assignment5.Classes.Address">
-    <Position X="5.75" Y="1" Width="1.5" />
+    <Position X="7.5" Y="1" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Classes\Contact.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAMAEAAAAAAAAIAAAABAAoAACACAAA=</HashCode>
+      <FileName>Classes\Address.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Assignment5.Classes.Contact">
-    <Position X="7.5" Y="1" Width="1.5" />
+    <Position X="5.75" Y="1" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AABAAQACAABAACAAAAAAAAAAAAIAAAAAAAAACAAAAAA=</HashCode>
+      <HashCode>AAEAAEAAAEAAAAAlAAEAAgAAAAIAAAAgAAQABAAAAAg=</HashCode>
       <FileName>Classes\Contact.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Assignment5.Classes.Email">
+    <Position X="7.5" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAIAAAAEAAAAEAAAAAQAAAAAABAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\Email.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Enum Name="Assignment5.Enums.Country">

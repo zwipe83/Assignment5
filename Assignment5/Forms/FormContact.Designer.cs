@@ -67,7 +67,7 @@
             grpName.Location = new Point(12, 22);
             grpName.Name = "grpName";
             grpName.Size = new Size(578, 124);
-            grpName.TabIndex = 0;
+            grpName.TabIndex = 100;
             grpName.TabStop = false;
             grpName.Text = "Name";
             // 
@@ -76,7 +76,7 @@
             txtLastName.Location = new Point(172, 71);
             txtLastName.Name = "txtLastName";
             txtLastName.Size = new Size(400, 23);
-            txtLastName.TabIndex = 1;
+            txtLastName.TabIndex = 2;
             // 
             // txtFirstName
             // 
@@ -121,7 +121,7 @@
             grpEmailPhone.Location = new Point(12, 161);
             grpEmailPhone.Name = "grpEmailPhone";
             grpEmailPhone.Size = new Size(578, 209);
-            grpEmailPhone.TabIndex = 0;
+            grpEmailPhone.TabIndex = 200;
             grpEmailPhone.TabStop = false;
             grpEmailPhone.Text = "Email and phone";
             // 
@@ -130,28 +130,28 @@
             txtPrivateEmail.Location = new Point(172, 168);
             txtPrivateEmail.Name = "txtPrivateEmail";
             txtPrivateEmail.Size = new Size(400, 23);
-            txtPrivateEmail.TabIndex = 1;
+            txtPrivateEmail.TabIndex = 6;
             // 
             // txtBusinessEmail
             // 
             txtBusinessEmail.Location = new Point(172, 131);
             txtBusinessEmail.Name = "txtBusinessEmail";
             txtBusinessEmail.Size = new Size(400, 23);
-            txtBusinessEmail.TabIndex = 1;
+            txtBusinessEmail.TabIndex = 5;
             // 
             // txtMobilePhone
             // 
             txtMobilePhone.Location = new Point(172, 89);
             txtMobilePhone.Name = "txtMobilePhone";
             txtMobilePhone.Size = new Size(400, 23);
-            txtMobilePhone.TabIndex = 1;
+            txtMobilePhone.TabIndex = 4;
             // 
             // txtHomePhone
             // 
             txtHomePhone.Location = new Point(172, 52);
             txtHomePhone.Name = "txtHomePhone";
             txtHomePhone.Size = new Size(400, 23);
-            txtHomePhone.TabIndex = 1;
+            txtHomePhone.TabIndex = 3;
             // 
             // lblPrivateEmail
             // 
@@ -206,7 +206,7 @@
             grpAddress.Location = new Point(12, 376);
             grpAddress.Name = "grpAddress";
             grpAddress.Size = new Size(578, 209);
-            grpAddress.TabIndex = 0;
+            grpAddress.TabIndex = 300;
             grpAddress.TabStop = false;
             grpAddress.Text = "Address";
             // 
@@ -215,36 +215,36 @@
             cmbCountry.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
             cmbCountry.AutoCompleteSource = AutoCompleteSource.ListItems;
             cmbCountry.FormattingEnabled = true;
-            cmbCountry.Location = new Point(172, 163);
+            cmbCountry.Location = new Point(172, 124);
             cmbCountry.Name = "cmbCountry";
             cmbCountry.Size = new Size(400, 23);
-            cmbCountry.TabIndex = 2;
+            cmbCountry.TabIndex = 10;
             // 
             // txtZipCode
             // 
-            txtZipCode.Location = new Point(172, 122);
+            txtZipCode.Location = new Point(172, 75);
             txtZipCode.Name = "txtZipCode";
-            txtZipCode.Size = new Size(400, 23);
-            txtZipCode.TabIndex = 1;
+            txtZipCode.Size = new Size(156, 23);
+            txtZipCode.TabIndex = 8;
             // 
             // txtCity
             // 
-            txtCity.Location = new Point(172, 80);
+            txtCity.Location = new Point(382, 72);
             txtCity.Name = "txtCity";
-            txtCity.Size = new Size(400, 23);
-            txtCity.TabIndex = 1;
+            txtCity.Size = new Size(190, 23);
+            txtCity.TabIndex = 9;
             // 
             // txtStreet
             // 
             txtStreet.Location = new Point(172, 43);
             txtStreet.Name = "txtStreet";
             txtStreet.Size = new Size(400, 23);
-            txtStreet.TabIndex = 1;
+            txtStreet.TabIndex = 7;
             // 
             // lblCountry
             // 
             lblCountry.AutoSize = true;
-            lblCountry.Location = new Point(116, 166);
+            lblCountry.Location = new Point(116, 127);
             lblCountry.Name = "lblCountry";
             lblCountry.Size = new Size(50, 15);
             lblCountry.TabIndex = 0;
@@ -254,7 +254,7 @@
             // lblZipCode
             // 
             lblZipCode.AutoSize = true;
-            lblZipCode.Location = new Point(113, 125);
+            lblZipCode.Location = new Point(113, 78);
             lblZipCode.Name = "lblZipCode";
             lblZipCode.Size = new Size(53, 15);
             lblZipCode.TabIndex = 0;
@@ -264,7 +264,7 @@
             // lblCity
             // 
             lblCity.AutoSize = true;
-            lblCity.Location = new Point(138, 83);
+            lblCity.Location = new Point(348, 78);
             lblCity.Name = "lblCity";
             lblCity.Size = new Size(28, 15);
             lblCity.TabIndex = 0;
@@ -286,16 +286,17 @@
             btnOkAdd.Location = new Point(140, 637);
             btnOkAdd.Name = "btnOkAdd";
             btnOkAdd.Size = new Size(101, 47);
-            btnOkAdd.TabIndex = 1;
+            btnOkAdd.TabIndex = 12;
             btnOkAdd.Text = "OK";
             btnOkAdd.UseVisualStyleBackColor = true;
+            btnOkAdd.Click += btnOkAdd_Click;
             // 
             // btnCancelAdd
             // 
             btnCancelAdd.Location = new Point(360, 637);
             btnCancelAdd.Name = "btnCancelAdd";
             btnCancelAdd.Size = new Size(101, 47);
-            btnCancelAdd.TabIndex = 1;
+            btnCancelAdd.TabIndex = 11;
             btnCancelAdd.Text = "Cancel";
             btnCancelAdd.UseVisualStyleBackColor = true;
             // 
@@ -311,6 +312,7 @@
             Controls.Add(grpName);
             Name = "FormContact";
             Text = "Customer";
+            Shown += FormContact_Shown;
             grpName.ResumeLayout(false);
             grpName.PerformLayout();
             grpEmailPhone.ResumeLayout(false);

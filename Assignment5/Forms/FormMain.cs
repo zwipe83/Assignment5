@@ -18,9 +18,16 @@ namespace Assignment5.Forms
 
         private void btnAddContact_Click(object sender, EventArgs e)
         {
-            Contact contact = new Contact("sjeffman83@outlook.com");
-            FormContact frmContact = new FormContact(contact);
-            frmContact.ShowDialog();
+            Contact contact = new Contact();
+            FormAddContact frmAddContact = new FormAddContact(contact);
+            frmAddContact.ShowDialog();
+        }
+
+        private void btnEditContact_Click(object sender, EventArgs e)
+        {
+            Contact contact = new Contact();
+            FormEditContact frmEditContact = new FormEditContact(contact);
+            frmEditContact.ShowDialog();
         }
     }
 }
