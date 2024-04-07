@@ -12,18 +12,25 @@ namespace Assignment5.Forms
 {
     public partial class FormContact : Form
     {
-        private Contact contact;
+        private Contact _contact;
+        private CustomerManager _customerManager;
 
         public Contact ContactData
         {
-            get => contact;
-            set => contact = value;
+            get => _contact;
+            set => _contact = value;
         }
-        public FormContact(Contact contact)
+        public CustomerManager CustomerManager
+        {
+            get => _customerManager;
+            set => _customerManager = value;
+        }
+        public FormContact(Contact contact, CustomerManager customerManager)
         {
             InitializeComponent();
 
-            this.contact = contact;
+            this._contact = contact;
+            this._customerManager = customerManager;
         }
 
         private void InitializeGUI()
@@ -52,6 +59,9 @@ namespace Assignment5.Forms
 
                 if (!ContactData.CheckData())
                     return;
+
+                Customer customer = new Customer(ContactData);
+                CustomerManager.AddNew(customer);
 
                 ContactData.ToString();
                 this.Close();

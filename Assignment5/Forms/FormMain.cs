@@ -11,6 +11,7 @@ namespace Assignment5.Forms
 {
     public partial class FormMain : Form
     {
+        private CustomerManager customerManager = new CustomerManager();
         public FormMain()
         {
             InitializeComponent();
@@ -19,14 +20,14 @@ namespace Assignment5.Forms
         private void btnAddContact_Click(object sender, EventArgs e)
         {
             Contact contact = new Contact();
-            FormAddContact frmAddContact = new FormAddContact(contact);
+            FormAddContact frmAddContact = new FormAddContact(contact, customerManager);
             frmAddContact.ShowDialog();
         }
 
         private void btnEditContact_Click(object sender, EventArgs e)
         {
             Contact contact = new Contact();
-            FormEditContact frmEditContact = new FormEditContact(contact);
+            FormEditContact frmEditContact = new FormEditContact(contact, customerManager);
             frmEditContact.ShowDialog();
         }
     }
