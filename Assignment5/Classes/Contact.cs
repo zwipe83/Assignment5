@@ -10,7 +10,6 @@ using Assignment5.Enums;
 
 namespace Assignment5.Classes
 {
-
     public class Contact
     {
         #region Fields
