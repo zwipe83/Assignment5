@@ -44,7 +44,16 @@ namespace Assignment5.Classes
         /// <summary>
         /// Base constructor, creates an intance of <see cref="Address"/> with default values
         /// </summary>
-        public Address() : this(string.Empty, string.Empty, string.Empty, Country.Sweden)
+        public Address() : this(string.Empty)
+        {
+        }
+        public Address(string street) : this(street, string.Empty)
+        {
+        }
+        public Address(string street, string zipCode) : this(street, zipCode, string.Empty)
+        {
+        }
+        public Address(string street, string zipCode, string city) : this(street, zipCode, city, Country.Sweden)
         {
         }
         /// <summary>
@@ -66,11 +75,17 @@ namespace Assignment5.Classes
         #region Methods
         public override string ToString()
         {
-            string address = $"Street: {Street}, Zip code: {ZipCode}, City: {City}, Country: {Country}";
 
-            DEBUG_PRINT($"Address.ToString(): {address}");
+            string strOut = "\n" + "Address" + "\n";
+            //TODO: Rework to use interpolation?
+            strOut += string.Format(" {0,-10} {1, -10}\n", "Street", Street);
+            strOut += string.Format(" {0,-10} {1, -10}\n", "Zip code", ZipCode);
+            strOut += string.Format(" {0,-10} {1, -10}\n", "City", City);
+            strOut += string.Format(" {0,-10} {1, -10}\n\n", "Country", Country);
 
-            return address;
+            //DEBUG_PRINT($"Phone.ToString(): {strOut}");
+
+            return strOut;
         }
         #endregion
 
