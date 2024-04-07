@@ -35,24 +35,46 @@ namespace Assignment5.Forms
 
         private void btnOkAdd_Click(object sender, EventArgs e)
         {
-            ContactData.FirstName = txtFirstName.Text;
-            ContactData.LastName = txtLastName.Text;
-            ContactData.EmailData.Personal = txtPrivateEmail.Text;
-            ContactData.EmailData.Work = txtBusinessEmail.Text;
-            ContactData.PhoneData.HomePhone = txtHomePhone.Text;
-            ContactData.PhoneData.MobilePhone = txtMobilePhone.Text;
-            ContactData.AddressData.Street = txtStreet.Text;
-            ContactData.AddressData.ZipCode = txtZipCode.Text;
-            ContactData.AddressData.City = txtCity.Text;
-            ContactData.AddressData.Country = (Country)cmbCountry.SelectedIndex;
-            //FIXED: Add rest of contact information
-            ContactData.ToString();
-            this.Close();
+            try
+            {
+
+                ContactData.FirstName = txtFirstName.Text;
+                ContactData.LastName = txtLastName.Text;
+                ContactData.EmailData.Work = txtBusinessEmail.Text;
+                ContactData.EmailData.Personal = txtPrivateEmail.Text;
+                ContactData.PhoneData.HomePhone = txtHomePhone.Text;
+                ContactData.PhoneData.MobilePhone = txtMobilePhone.Text;
+                ContactData.AddressData.Street = txtStreet.Text;
+                ContactData.AddressData.ZipCode = txtZipCode.Text;
+                ContactData.AddressData.City = txtCity.Text;
+                ContactData.AddressData.Country = (Country)cmbCountry.SelectedIndex;
+                //FIXED: Add rest of contact information
+
+                if (!ContactData.CheckData())
+                    return;
+
+                ContactData.ToString();
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void FormContact_Shown(object sender, EventArgs e)
         {
             InitializeGUI();
+        }
+
+        private void btnCancelAdd_Click(object sender, EventArgs e)
+        {
+            //TODO: Maybe ad a spcific position for the confirmation dialog?
+            DialogResult result = MessageBox.Show("Are you sure you want to cancel?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question); 
+            if (result == DialogResult.Yes)
+            {
+                this.Close();
+            }
         }
     }
 }

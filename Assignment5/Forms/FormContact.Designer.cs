@@ -283,6 +283,7 @@
             // 
             // btnOkAdd
             // 
+            btnOkAdd.DialogResult = DialogResult.OK;
             btnOkAdd.Location = new Point(140, 637);
             btnOkAdd.Name = "btnOkAdd";
             btnOkAdd.Size = new Size(101, 47);
@@ -293,12 +294,14 @@
             // 
             // btnCancelAdd
             // 
+            btnCancelAdd.DialogResult = DialogResult.Cancel;
             btnCancelAdd.Location = new Point(360, 637);
             btnCancelAdd.Name = "btnCancelAdd";
             btnCancelAdd.Size = new Size(101, 47);
             btnCancelAdd.TabIndex = 11;
             btnCancelAdd.Text = "Cancel";
             btnCancelAdd.UseVisualStyleBackColor = true;
+            btnCancelAdd.Click += btnCancelAdd_Click;
             // 
             // FormContact
             // 
