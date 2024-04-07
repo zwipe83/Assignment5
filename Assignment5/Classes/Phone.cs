@@ -40,11 +40,14 @@ namespace Assignment5.Classes
         #region Methods
         public override string ToString()
         {
-            string phoneData = $"Home phone: {HomePhone}, Mobile phone: {MobilePhone}";
+            string strOut = "\n" + "Phone Numbers" + "\n";
+            //TODO: Rework to use interpolation?
+            strOut += string.Format(" {0,-10} {1, -10}\n", "Home", HomePhone);
+            strOut += string.Format(" {0,-10} {1, -10}\n\n", "Mobile", MobilePhone);
 
-            DEBUG_PRINT($"Phone.ToString(): {phoneData}");
+            //DEBUG_PRINT($"Phone.ToString(): {strOut}");
 
-            return phoneData;
+            return strOut;
         }
         #endregion
     }
