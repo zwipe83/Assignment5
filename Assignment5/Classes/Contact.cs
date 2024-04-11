@@ -80,7 +80,11 @@ namespace Assignment5.Classes
         /// <exception cref="NotImplementedException"></exception>
         public Contact(Contact objToCopyFrom)
         {
-            throw new NotImplementedException();
+            this.FirstName = objToCopyFrom.FirstName;
+            this.LastName = objToCopyFrom.LastName;
+            this.AddressData = objToCopyFrom.AddressData;
+            this.PhoneData = objToCopyFrom.PhoneData;
+            this.EmailData = objToCopyFrom.EmailData;
         }
         #endregion
         #region Methods

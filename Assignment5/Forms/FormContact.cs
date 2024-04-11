@@ -13,24 +13,20 @@ namespace Assignment5.Forms
     public partial class FormContact : Form
     {
         private Contact _contact;
-        private CustomerManager _customerManager;
 
         public Contact ContactData
         {
             get => _contact;
             set => _contact = value;
         }
-        public CustomerManager CustomerManager
+        public FormContact() : this(new Contact())
         {
-            get => _customerManager;
-            set => _customerManager = value;
+            //New _contact
         }
-        public FormContact(Contact contact, CustomerManager customerManager)
+        public FormContact(Contact contact)
         {
             InitializeComponent();
-
             this._contact = contact;
-            this._customerManager = customerManager;
         }
 
         private void InitializeGUI()
@@ -44,7 +40,6 @@ namespace Assignment5.Forms
         {
             try
             {
-
                 ContactData.FirstName = txtFirstName.Text;
                 ContactData.LastName = txtLastName.Text;
                 ContactData.EmailData.Work = txtBusinessEmail.Text;
@@ -55,15 +50,15 @@ namespace Assignment5.Forms
                 ContactData.AddressData.ZipCode = txtZipCode.Text;
                 ContactData.AddressData.City = txtCity.Text;
                 ContactData.AddressData.Country = (Country)cmbCountry.SelectedIndex;
-                //FIXED: Add rest of contact information
+                //FIXED: Add rest of _contact information
 
                 if (!ContactData.CheckData())
                     return;
 
-                Customer customer = new Customer(ContactData);
-                CustomerManager.AddNew(customer);
+                ContactData.ToString(); //Debug
 
-                ContactData.ToString();
+                DialogResult = DialogResult.OK;
+
                 this.Close();
             }
             catch (Exception ex)

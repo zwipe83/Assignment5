@@ -32,7 +32,7 @@
             lblName = new Label();
             lblOfficePhone = new Label();
             lblOfficeEmail = new Label();
-            lstContacts = new ListBox();
+            lstCustomers = new ListBox();
             grpContactDetails = new GroupBox();
             lblContactPhoneNumbers = new Label();
             lblContactEmails = new Label();
@@ -79,14 +79,15 @@
             lblOfficeEmail.TabIndex = 0;
             lblOfficeEmail.Text = "Office E-mail";
             // 
-            // lstContacts
+            // lstCustomers
             // 
-            lstContacts.FormattingEnabled = true;
-            lstContacts.ItemHeight = 15;
-            lstContacts.Location = new Point(12, 71);
-            lstContacts.Name = "lstContacts";
-            lstContacts.Size = new Size(762, 394);
-            lstContacts.TabIndex = 1;
+            lstCustomers.FormattingEnabled = true;
+            lstCustomers.ItemHeight = 15;
+            lstCustomers.Location = new Point(12, 71);
+            lstCustomers.Name = "lstCustomers";
+            lstCustomers.Size = new Size(762, 394);
+            lstCustomers.TabIndex = 1;
+            lstCustomers.Click += lstCustomers_Click;
             // 
             // grpContactDetails
             // 
@@ -165,7 +166,7 @@
             Controls.Add(btnEditContact);
             Controls.Add(btnAddContact);
             Controls.Add(grpContactDetails);
-            Controls.Add(lstContacts);
+            Controls.Add(lstCustomers);
             Controls.Add(lblOfficeEmail);
             Controls.Add(lblOfficePhone);
             Controls.Add(lblName);
@@ -184,7 +185,7 @@
         private Label lblName;
         private Label lblOfficePhone;
         private Label lblOfficeEmail;
-        private ListBox lstContacts;
+        private ListBox lstCustomers;
         private GroupBox grpContactDetails;
         private Button btnAddContact;
         private Button btnEditContact;
