@@ -10,15 +10,14 @@ namespace Assignment5.Interfaces
     internal interface ICustomerManager
     {
         public void AddCustomer(Contact contact);
-        public void ChangeCustomer(Contact contact, Guid guid);
-        public bool CheckIndex(Guid guid);
-        public void Remove(Guid guid);
-        public void DeleteCustomer(Guid guid);
-        public void GetAddressInfo(Guid guid);
-        public Customer GetCustomer(string customerInfo);
+        public void ChangeCustomer(Contact contact, Guid customerId);
+        public bool CheckIndex(Guid customerId);
+        public void DeleteCustomer(Guid customerId);
+        public Customer GetCustomer(Guid customerId);
         public string[] GetCustomerInfoStrings();
-        public string GetEmailInfo();
-        public string GetPhoneInfo();
+        public string GetAddressInfo(Guid customerId);
+        public string GetEmailInfo(Guid customerId);
+        public string GetPhoneInfo(Guid customerId);
         public void TestValues();
     }
 }

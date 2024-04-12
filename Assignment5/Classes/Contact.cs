@@ -109,7 +109,7 @@ namespace Assignment5.Classes
         /// <exception cref="NotImplementedException"></exception>
         private string GetAddressInfo()
         {
-            throw new NotImplementedException();
+            return $"{AddressData}";
         }
         /// <summary>
         /// 

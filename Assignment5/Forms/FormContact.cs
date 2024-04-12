@@ -34,6 +34,20 @@ namespace Assignment5.Forms
             cmbCountry.DataSource = Enum.GetValues(typeof(Country));
             cmbCountry.SelectedIndex = (int)ContactData.AddressData.Country;
             txtFirstName.Focus();
+
+            if(!string.IsNullOrEmpty(ContactData.FirstName))
+            {
+                txtFirstName.Text = ContactData.FirstName;
+                txtLastName.Text = ContactData.LastName;
+                txtBusinessEmail.Text = ContactData.EmailData.Work;
+                txtPrivateEmail.Text = ContactData.EmailData.Personal;
+                txtHomePhone.Text = ContactData.PhoneData.HomePhone;
+                txtMobilePhone.Text = ContactData.PhoneData.MobilePhone;
+                txtStreet.Text = ContactData.AddressData.Street;
+                txtZipCode.Text = ContactData.AddressData.ZipCode;
+                txtCity.Text = ContactData.AddressData.City;
+                cmbCountry.SelectedIndex = (int)ContactData.AddressData.Country;
+            }
         }
 
         private void btnOkAdd_Click(object sender, EventArgs e)

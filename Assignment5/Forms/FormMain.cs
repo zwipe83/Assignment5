@@ -20,6 +20,17 @@ namespace Assignment5.Forms
         public FormMain()
         {
             InitializeComponent();
+            InitializeGUI();
+        }
+
+        ~FormMain()
+        {
+        }
+
+        private void InitializeGUI()
+        {
+
+            UpdateButtons(false);
         }
 
         private void btnAddContact_Click(object sender, EventArgs e)
@@ -43,28 +54,103 @@ namespace Assignment5.Forms
             lstCustomers.Items.Clear();
             foreach (Customer customer in CustomerManager.CustomerList)
             {
-                lstCustomers.Items.Add(customer.ToString());
+               lstCustomers.Items.Add(customer.ToString());
+               //lstViewCustomers.Items.Add(customer.ToString());
+               //lstViewCustomers.AutoResizeColumn(0, ColumnHeaderAutoResizeStyle.ColumnContent);
+               //listView1.AutoResizeColumn(1, ColumnHeaderAutoResizeStyle.ColumnContent);
             }
         }
 
         private void btnEditContact_Click(object sender, EventArgs e)
         {
-            //Get Guid here
-            Contact contact = new Contact(new Contact()); //TODO: Obviously replace this with a _contact from the list
+            if (lstCustomers.SelectedItems.Count <= 0)
+            {
+                return;
+            }
+            string customer = lstCustomers.SelectedItem.ToString();
+            if (string.IsNullOrEmpty(customer))
+            {
+                return;
+            }
+            Guid customerId = CustomerManager.ParseCustomerInfoAsGuid(customer);
+            Customer editCustomer = new Customer(CustomerManager.GetCustomer(customerId));
+            Contact contact = new Contact(editCustomer.Contact);
             FormContact frmContact = new FormContact(contact);
             frmContact.ShowDialog();
 
             if (frmContact.DialogResult == DialogResult.OK)
             {
-                CustomerManager.ChangeCustomer(frmContact.ContactData, Guid.NewGuid()); //TODO: Fix this, should NOT be NewGuid...
+                CustomerManager.ChangeCustomer(frmContact.ContactData, editCustomer.CustomerId);
+                UpdateCustomerList();
+            }
+            else
+            {
+                //Nothing for now...
             }
         }
 
         private void lstCustomers_Click(object sender, EventArgs e)
         {
-            Customer selectedCustomer = CustomerManager.GetCustomer(lstCustomers.SelectedItem.ToString());
+            if (lstCustomers.SelectedItems.Count <= 0)
+            {
+                return;
+            }
+            string customer = lstCustomers.SelectedItem.ToString();
+            if (string.IsNullOrEmpty(customer))
+            {
+                return;
+            }
+            Guid customerId = CustomerManager.ParseCustomerInfoAsGuid(customer);
+            Customer selectedCustomer = CustomerManager.GetCustomer(customerId);
 
-            lblContactAddress.Text = $"{selectedCustomer.Contact.FirstName},{selectedCustomer.Contact.LastName}\n{selectedCustomer.Contact.AddressData.ToString()}";
+            grpContactDetails.Text = $"Contact Details - {selectedCustomer.Contact.LastName.ToUpper()},{selectedCustomer.Contact.FirstName}";
+            lblContactAddress.Text = $"{CustomerManager.GetAddressInfo(customerId)}";
+            lblContactEmails.Text = $"{CustomerManager.GetEmailInfo(customerId)}";
+            lblContactPhoneNumbers.Text = $"{CustomerManager.GetPhoneInfo(customerId)}";
+        }
+
+        private void lstCustomers_DoubleClick(object sender, EventArgs e)
+        {
+            if (lstCustomers.SelectedItems.Count <= 0)
+            {
+                return;
+            }
+            btnEditContact_Click(sender, e);
+        }
+
+        private void UpdateButtons(bool setting)
+        {
+            btnEditContact.Enabled = setting;
+            btnDeleteContact.Enabled = setting;
+        }
+
+        private void lstCustomers_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lstCustomers.Items.Count > 0 && lstCustomers.SelectedIndex >= 0)
+            {
+                UpdateButtons(true);
+            }
+            else
+            {
+                UpdateButtons(false);
+            }
+        }
+
+        private void btnDeleteContact_Click(object sender, EventArgs e)
+        {
+            if (lstCustomers.SelectedItems.Count <= 0)
+            {
+                return; //Nothing to delete
+            }
+            string? customer = lstCustomers.SelectedItem?.ToString();
+            if (string.IsNullOrEmpty(customer))
+            {
+                return; //Again, nothing to delete
+            }
+            Guid customerId = CustomerManager.ParseCustomerInfoAsGuid(customer);
+            CustomerManager.DeleteCustomer(customerId);
+            UpdateCustomerList();
+            GC.Collect(); //TODO: Not needed, just trying it out
         }
     }
 }

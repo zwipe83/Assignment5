@@ -40,6 +40,7 @@
             btnAddContact = new Button();
             btnEditContact = new Button();
             btnDeleteContact = new Button();
+            lstViewCustomers = new ListView();
             grpContactDetails.SuspendLayout();
             SuspendLayout();
             // 
@@ -81,6 +82,7 @@
             // 
             // lstCustomers
             // 
+            lstCustomers.Font = new Font("Courier New", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lstCustomers.FormattingEnabled = true;
             lstCustomers.ItemHeight = 15;
             lstCustomers.Location = new Point(12, 71);
@@ -88,6 +90,8 @@
             lstCustomers.Size = new Size(762, 394);
             lstCustomers.TabIndex = 1;
             lstCustomers.Click += lstCustomers_Click;
+            lstCustomers.SelectedIndexChanged += lstCustomers_SelectedIndexChanged;
+            lstCustomers.DoubleClick += lstCustomers_DoubleClick;
             // 
             // grpContactDetails
             // 
@@ -156,12 +160,23 @@
             btnDeleteContact.TabIndex = 3;
             btnDeleteContact.Text = "Delete";
             btnDeleteContact.UseVisualStyleBackColor = true;
+            btnDeleteContact.Click += btnDeleteContact_Click;
+            // 
+            // lstViewCustomers
+            // 
+            lstViewCustomers.Location = new Point(217, 185);
+            lstViewCustomers.Name = "lstViewCustomers";
+            lstViewCustomers.Size = new Size(557, 280);
+            lstViewCustomers.TabIndex = 4;
+            lstViewCustomers.UseCompatibleStateImageBehavior = false;
+            lstViewCustomers.Visible = false;
             // 
             // FormMain
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1200, 554);
+            Controls.Add(lstViewCustomers);
             Controls.Add(btnDeleteContact);
             Controls.Add(btnEditContact);
             Controls.Add(btnAddContact);
@@ -171,6 +186,7 @@
             Controls.Add(lblOfficePhone);
             Controls.Add(lblName);
             Controls.Add(lblId);
+            FormBorderStyle = FormBorderStyle.Fixed3D;
             Name = "FormMain";
             Text = "CRM by Samuel Jeffman";
             grpContactDetails.ResumeLayout(false);
@@ -193,5 +209,6 @@
         private Label lblContactAddress;
         private Label lblContactEmails;
         private Label lblContactPhoneNumbers;
+        private ListView lstViewCustomers;
     }
 }

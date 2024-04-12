@@ -28,9 +28,15 @@ namespace Assignment5.Classes
 
         public void ChangeCustomer(Contact contact, Guid guid)
         {
-            throw new NotImplementedException();
-        }
+            Customer customer = new Customer(contact, guid);
 
+            int index = CustomerList.FindIndex(item => item.CustomerId == guid);
+
+            if (index != -1)
+            {
+                CustomerList[index] = customer;
+            }
+        }
         public bool CheckIndex(Guid guid)
         {
             throw new NotImplementedException();
@@ -38,43 +44,69 @@ namespace Assignment5.Classes
 
         public void DeleteCustomer(Guid guid)
         {
-            throw new NotImplementedException();
+            int index = CustomerList.FindIndex(item => item.CustomerId == guid);
+
+            if (index != -1)
+            {
+                CustomerList.RemoveAt(index);
+            }
         }
 
-        public void GetAddressInfo(Guid guid)
+        public (bool, Guid) CheckGuid(string guid)
         {
-            throw new NotImplementedException();
+            Guid validGuid;
+            if (Guid.TryParse(guid, out validGuid))
+            {
+                return (true, validGuid);
+            }
+            return (false, Guid.Empty);
         }
 
-        public Customer GetCustomer(string customerInfo)
+        public Guid ParseCustomerInfoAsGuid(string customerInfo)
         {
             // Extract the GUID from the customer information string
             string customerIdString = customerInfo.Split(' ')[0].Trim();
 
-            // Find the customer with the matching GUID in the CustomerManager.CustomerList
-            Customer selectedCustomer = new Customer(CustomerList.FirstOrDefault(customer => customer.CustomerId.ToString() == customerIdString));
+            (bool isValid, Guid validGuid) = CheckGuid(customerIdString);
 
-            return selectedCustomer;
+            if (isValid)
+            {
+                return validGuid;
+            }
+            return Guid.Empty;
+        }
+
+        public Customer GetCustomer(Guid customerId)
+        {
+            // Find the customer with the matching GUID in the CustomerManager.CustomerList
+            Customer selectedCustomer = new Customer(CustomerList.FirstOrDefault(customer => customer.CustomerId == customerId));
+
+            return selectedCustomer ?? null;
         }
 
         public string[] GetCustomerInfoStrings()
         {
             throw new NotImplementedException();
         }
-
-        public string GetEmailInfo()
+        public string GetAddressInfo(Guid customerId)
         {
-            throw new NotImplementedException();
+            Customer customer = GetCustomer(customerId);
+
+            return $"{customer.Contact.AddressData}";
         }
 
-        public string GetPhoneInfo()
+        public string GetEmailInfo(Guid customerId)
         {
-            throw new NotImplementedException();
+            Customer customer = GetCustomer(customerId);
+
+            return $"{customer.Contact.EmailData}";
         }
 
-        public void Remove(Guid guid)
+        public string GetPhoneInfo(Guid customerId)
         {
-            throw new NotImplementedException();
+            Customer customer = GetCustomer(customerId);
+
+            return $"{customer.Contact.PhoneData}";
         }
 
         public void TestValues()

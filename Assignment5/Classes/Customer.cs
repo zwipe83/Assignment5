@@ -21,9 +21,25 @@ namespace Assignment5.Classes
         {
             get => _contact;
         }
+        public string LastName
+        {
+            get => Contact.LastName;
+        }
+        public string FirstName
+        {
+            get => Contact.FirstName;
+        }
+        public string MobilePhone
+        {
+            get => Contact.PhoneData.MobilePhone;
+        }
+        public string WorkEmail
+        {
+            get => Contact.EmailData.Work;
+        }
         #endregion
         #region Constructors
-        public Customer(): this(new Contact(), Guid.NewGuid())
+        public Customer() : this(new Contact(), Guid.NewGuid())
         {
         }
         public Customer(Contact contact) : this(contact, Guid.NewGuid())
@@ -44,7 +60,7 @@ namespace Assignment5.Classes
         #region Methods
         public override string ToString()
         {
-            return $"{_customerId}           {_contact.LastName},{_contact.FirstName} {_contact.PhoneData.MobilePhone} {_contact.EmailData.Work}";
+            return $"{CustomerId}           {LastName},{FirstName} {MobilePhone} {WorkEmail}";
         }
         #endregion
     }
