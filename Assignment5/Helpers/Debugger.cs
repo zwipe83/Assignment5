@@ -9,6 +9,11 @@ namespace Assignment5.Helpers
 {
     internal class Debugger
     {
+        #region Public Static Methods
+        /// <summary>
+        /// Debug printer which will print a specific message to VS debugger
+        /// </summary>
+        /// <param name="message"></param>
         public static void DEBUG_PRINT(string message)
         {
 #if DEBUG
@@ -16,5 +21,6 @@ namespace Assignment5.Helpers
             System.Diagnostics.Debug.Print($"{now:yyyy-MM-dd HH:mm:ss.fff} {message}");
 #endif
         }
+        #endregion
     }
 }

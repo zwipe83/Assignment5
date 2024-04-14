@@ -40,14 +40,13 @@
             btnAddContact = new Button();
             btnEditContact = new Button();
             btnDeleteContact = new Button();
-            lstViewCustomers = new ListView();
             grpContactDetails.SuspendLayout();
             SuspendLayout();
             // 
             // lblId
             // 
             lblId.AutoSize = true;
-            lblId.Location = new Point(44, 41);
+            lblId.Location = new Point(130, 41);
             lblId.Name = "lblId";
             lblId.Size = new Size(18, 15);
             lblId.TabIndex = 0;
@@ -56,7 +55,7 @@
             // lblName
             // 
             lblName.AutoSize = true;
-            lblName.Location = new Point(186, 41);
+            lblName.Location = new Point(313, 41);
             lblName.Name = "lblName";
             lblName.Size = new Size(99, 15);
             lblName.TabIndex = 0;
@@ -65,16 +64,16 @@
             // lblOfficePhone
             // 
             lblOfficePhone.AutoSize = true;
-            lblOfficePhone.Location = new Point(369, 41);
+            lblOfficePhone.Location = new Point(475, 41);
             lblOfficePhone.Name = "lblOfficePhone";
-            lblOfficePhone.Size = new Size(76, 15);
+            lblOfficePhone.Size = new Size(81, 15);
             lblOfficePhone.TabIndex = 0;
-            lblOfficePhone.Text = "Office phone";
+            lblOfficePhone.Text = "Mobile phone";
             // 
             // lblOfficeEmail
             // 
             lblOfficeEmail.AutoSize = true;
-            lblOfficeEmail.Location = new Point(598, 41);
+            lblOfficeEmail.Location = new Point(630, 41);
             lblOfficeEmail.Name = "lblOfficeEmail";
             lblOfficeEmail.Size = new Size(76, 15);
             lblOfficeEmail.TabIndex = 0;
@@ -162,21 +161,11 @@
             btnDeleteContact.UseVisualStyleBackColor = true;
             btnDeleteContact.Click += btnDeleteContact_Click;
             // 
-            // lstViewCustomers
-            // 
-            lstViewCustomers.Location = new Point(217, 185);
-            lstViewCustomers.Name = "lstViewCustomers";
-            lstViewCustomers.Size = new Size(557, 280);
-            lstViewCustomers.TabIndex = 4;
-            lstViewCustomers.UseCompatibleStateImageBehavior = false;
-            lstViewCustomers.Visible = false;
-            // 
             // FormMain
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1200, 554);
-            Controls.Add(lstViewCustomers);
             Controls.Add(btnDeleteContact);
             Controls.Add(btnEditContact);
             Controls.Add(btnAddContact);
@@ -209,6 +198,5 @@
         private Label lblContactAddress;
         private Label lblContactEmails;
         private Label lblContactPhoneNumbers;
-        private ListView lstViewCustomers;
     }
 }

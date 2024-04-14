@@ -1,9 +1,9 @@
-﻿
-/// <summary>
+﻿/// <summary>
 /// Filename: EnumHelper.cs
 /// Created on: 2024-04-14 00:00:00
 /// Author: Samuel Jeffman
 /// </summary>
+/// 
 
 using System.ComponentModel;
 using System.Reflection;

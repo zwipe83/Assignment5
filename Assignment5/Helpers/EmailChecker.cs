@@ -1,15 +1,22 @@
 ﻿/// <summary>
-/// Filename: Program.cs
+/// Filename: EmailChecker.cs
 /// Created on: 2024-04-04 00:00:00
 /// Author: Samuel Jeffman
 /// </summary>
 /// 
+
 using System.Text.RegularExpressions;
 
 namespace Assignment5.Helpers
 {
     public class EmailChecker
     {
+        #region Public Static methods
+        /// <summary>
+        /// Will check email has a valid format string@string.string. String.empty will also be valid.
+        /// </summary>
+        /// <param name="email"></param>
+        /// <returns></returns>
         public static bool IsValidAddress(string email)
         {
             if (email is not null)
@@ -25,5 +32,6 @@ namespace Assignment5.Helpers
             }
             return false;
         }
+        #endregion
     }
 }

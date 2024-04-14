@@ -77,6 +77,7 @@
             txtLastName.Name = "txtLastName";
             txtLastName.Size = new Size(400, 23);
             txtLastName.TabIndex = 2;
+            txtLastName.TextChanged += txtLastName_TextChanged;
             // 
             // txtFirstName
             // 
@@ -84,6 +85,7 @@
             txtFirstName.Name = "txtFirstName";
             txtFirstName.Size = new Size(400, 23);
             txtFirstName.TabIndex = 1;
+            txtFirstName.TextChanged += txtFirstName_TextChanged;
             // 
             // lblLastName
             // 
@@ -131,6 +133,7 @@
             txtPrivateEmail.Name = "txtPrivateEmail";
             txtPrivateEmail.Size = new Size(400, 23);
             txtPrivateEmail.TabIndex = 6;
+            txtPrivateEmail.TextChanged += txtPrivateEmail_TextChanged;
             // 
             // txtBusinessEmail
             // 
@@ -138,6 +141,7 @@
             txtBusinessEmail.Name = "txtBusinessEmail";
             txtBusinessEmail.Size = new Size(400, 23);
             txtBusinessEmail.TabIndex = 5;
+            txtBusinessEmail.TextChanged += txtBusinessEmail_TextChanged;
             // 
             // txtMobilePhone
             // 
@@ -145,6 +149,7 @@
             txtMobilePhone.Name = "txtMobilePhone";
             txtMobilePhone.Size = new Size(400, 23);
             txtMobilePhone.TabIndex = 4;
+            txtMobilePhone.TextChanged += txtMobilePhone_TextChanged;
             // 
             // txtHomePhone
             // 
@@ -152,6 +157,7 @@
             txtHomePhone.Name = "txtHomePhone";
             txtHomePhone.Size = new Size(400, 23);
             txtHomePhone.TabIndex = 3;
+            txtHomePhone.TextChanged += txtHomePhone_TextChanged;
             // 
             // lblPrivateEmail
             // 
@@ -219,6 +225,7 @@
             cmbCountry.Name = "cmbCountry";
             cmbCountry.Size = new Size(400, 23);
             cmbCountry.TabIndex = 10;
+            cmbCountry.SelectedIndexChanged += cmbCountry_SelectedIndexChanged;
             // 
             // txtZipCode
             // 
@@ -226,6 +233,7 @@
             txtZipCode.Name = "txtZipCode";
             txtZipCode.Size = new Size(156, 23);
             txtZipCode.TabIndex = 8;
+            txtZipCode.TextChanged += txtZipCode_TextChanged;
             // 
             // txtCity
             // 
@@ -233,6 +241,7 @@
             txtCity.Name = "txtCity";
             txtCity.Size = new Size(190, 23);
             txtCity.TabIndex = 9;
+            txtCity.TextChanged += txtCity_TextChanged;
             // 
             // txtStreet
             // 
@@ -240,6 +249,7 @@
             txtStreet.Name = "txtStreet";
             txtStreet.Size = new Size(400, 23);
             txtStreet.TabIndex = 7;
+            txtStreet.TextChanged += txtStreet_TextChanged;
             // 
             // lblCountry
             // 
@@ -283,7 +293,6 @@
             // 
             // btnOkAdd
             // 
-            btnOkAdd.DialogResult = DialogResult.OK;
             btnOkAdd.Location = new Point(140, 637);
             btnOkAdd.Name = "btnOkAdd";
             btnOkAdd.Size = new Size(101, 47);

@@ -1,7 +1,7 @@
 ﻿//Farid Naisan
 
 /// <summary>
-/// Filename: Contact.cs
+/// Filename: Email.cs
 /// Modified on: 2024-04-07 00:00:00
 /// Author: Samuel Jeffman
 /// </summary>
@@ -15,11 +15,13 @@ namespace Assignment5.Classes
 {
     public class Email
     {
-        //private email
+        #region Fields
+        //private _email
         private string personalMail;
         //officeMail mail
         private string officeMail;
-
+        #endregion
+        #region Constructors
         //Constructors are overloaded and called in a chain
 
         /// <summary>
@@ -60,7 +62,8 @@ namespace Assignment5.Classes
             officeMail = workMail;
             this.personalMail = personalMail;
         }
-
+        #endregion
+        #region Properties
         /// <summary>
         /// Property related to the field m_Personal
         /// Both read and write access
@@ -87,7 +90,7 @@ namespace Assignment5.Classes
 
                     DEBUG_PRINT($"EmailAddress.Address - Incorrect address: {value}");
 
-                    throw new Exception($"Invalid email address: {value}");
+                    //throw new Exception($"Invalid _email _address: {value}");
                 }
             }
         }
@@ -116,11 +119,12 @@ namespace Assignment5.Classes
                     //FIXED: Throw exception?
                     DEBUG_PRINT($"EmailAddress.Address - Incorrect address: {value}");
 
-                    throw new Exception($"Invalid email address: {value}");
+                    //throw new Exception($"Invalid _email _address: {value}");
                 }
             }
         }
-
+        #endregion
+        #region Public Methods
         /// <summary>
         /// This method prepares a format string that is in sync with the ToString
         /// method.  It will be used in the MainForm as part of the heading for the ListBox
@@ -152,13 +156,6 @@ namespace Assignment5.Classes
 
             return strOut;
         }
-
+        #endregion
     }
 }
-
-
-
-
-
-
-

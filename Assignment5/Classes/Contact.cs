@@ -5,60 +5,86 @@
 /// </summary>
 /// 
 
-using static Assignment5.Helpers.Debugger;
 using Assignment5.Enums;
+using static Assignment5.Helpers.Debugger;
 
 namespace Assignment5.Classes
 {
     public class Contact
     {
         #region Fields
-        private Email? email;
-        private Phone? phone;
-        private Address? address;
-
+        /// <summary>
+        /// Private field for the storing of an instance of object <see cref="Email"/>
+        /// </summary>
+        private Email? _email;
+        /// <summary>
+        /// Private field for the storing of an instance of object <see cref="Phone"/>
+        /// </summary>
+        private Phone? _phone;
+        /// <summary>
+        /// Private field for the storing of an instance of object <see cref="Address"/>
+        /// </summary>
+        private Address? _address;
+        /// <summary>
+        /// Private field for the storing of first name as a <see cref="string"/>
+        /// </summary>
         private string _firstName;
+        /// <summary>
+        /// Private field for the storing of last name as a <see cref="string"/>
+        /// </summary>
         private string _lastName;
         #endregion
         #region Properties
+        /// <summary>
+        /// Property for getting and setting value to private field <see cref="_firstName"/>
+        /// </summary>
         public string FirstName
         {
             get => _firstName;
             set => _firstName = value;
         }
+        /// <summary>
+        /// Property for getting and setting value to private field <see cref="_lastName"/>
+        /// </summary>
         public string LastName
         {
             get => _lastName;
             set => _lastName = value;
         }
-
+        /// <summary>
+        /// Property for getting and setting value to private field <see cref="_address"/>
+        /// </summary>
         public Address AddressData
         {
-            get => address;
-            set => address = value;
+            get => _address;
+            set => _address = value;
         }
-
+        /// <summary>
+        /// Property for getting and setting value to private field <see cref="_email"/>
+        /// </summary>
         public Email EmailData
         {
-            get => email;
-            set => email = value;
+            get => _email;
+            set => _email = value;
         }
-
+        /// <summary>
+        /// Property for getting and setting value to private field <see cref="_phone"/>
+        /// </summary>
         public Phone PhoneData
         {
-            get => phone;
-            set => phone = value;
+            get => _phone;
+            set => _phone = value;
         }
         #endregion
         #region Constructors
         /// <summary>
-        /// Base constructor, creates an intance of <see cref="Contact"/> with default values
+        /// Base Contact constructor, creates an intance of <see cref="Contact"/> with all default values
         /// </summary>
         public Contact() : this(string.Empty, string.Empty, new Address(), new Phone(), new Email())
         {
         }
         /// <summary>
-        /// Inits a new object of type <see cref="Contact">
+        /// Contact constructor, creates an intance of <see cref="Address"/> with a specific <see cref="FirstName"/>, <see cref="LastName"/>, <see cref="AddressData"/>, <see cref="PhoneData"/> and <see cref="EmailData"/>
         /// </summary>
         /// <param name="firstName"></param>
         /// <param name="lastName"></param>
@@ -77,7 +103,6 @@ namespace Assignment5.Classes
         /// Copy Constructor, copies values from one <see cref="Contact"/> to a new instance of <see cref="Contact"/>
         /// </summary>
         /// <param name="objToCopyFrom"></param>
-        /// <exception cref="NotImplementedException"></exception>
         public Contact(Contact objToCopyFrom)
         {
             this.FirstName = objToCopyFrom.FirstName;
@@ -87,32 +112,25 @@ namespace Assignment5.Classes
             this.EmailData = objToCopyFrom.EmailData;
         }
         #endregion
-        #region Methods
+        #region Public Methods
         /// <summary>
-        /// 
+        /// Checks data to see if a minimum fulfilled
         /// </summary>
         /// <returns></returns>
         public bool CheckData()
         {
             bool ok = (!string.IsNullOrWhiteSpace(FirstName) || !string.IsNullOrWhiteSpace(LastName))
                 && !string.IsNullOrWhiteSpace(AddressData.City)
-                && Enum.IsDefined(typeof(Country), (int)AddressData.Country); //Probably not entirely necessary
+                && Enum.IsDefined(typeof(Country), (int)AddressData.Country);
 
             DEBUG_PRINT($"CheckData() OK: {ok}");
 
             return ok;
         }
+        #endregion
+        #region Overridden Methods
         /// <summary>
-        /// 
-        /// </summary>
-        /// <returns></returns>
-        /// <exception cref="NotImplementedException"></exception>
-        private string GetAddressInfo()
-        {
-            return $"{AddressData}";
-        }
-        /// <summary>
-        /// 
+        /// Overridden ToString() method to return contact information for the current customer.
         /// </summary>
         /// <returns></returns>
         public override string ToString()
