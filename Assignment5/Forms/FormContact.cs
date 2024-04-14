@@ -159,6 +159,10 @@ namespace Assignment5.Forms
             {
                 this.Close();
             }
+            else if (result == DialogResult.No) 
+            {
+                return; //Do nothing
+            }
         }
         /// <summary>
         /// Update controls in the GUI
