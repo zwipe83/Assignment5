@@ -10,7 +10,7 @@
   <Class Name="Assignment5.Forms.FormContact">
     <Position X="2.25" Y="1" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>gACAIMABUCBAFCACAACJAQ0CKwBBggAoABIAIIBAQgQ=</HashCode>
+      <HashCode>gACAIMCBUCBAFCACAACJAQ0CKwhBggQoABIAIIBAQgQ=</HashCode>
       <FileName>Forms\FormContact.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -42,10 +42,53 @@
       <FileName>Classes\Email.cs</FileName>
     </TypeIdentifier>
   </Class>
+  <Class Name="Assignment5.Classes.CustomerManager">
+    <Position X="11.25" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAOAAAEAAAAAAABACQAiAAACAAAAAAAAIEAAABAAA=</HashCode>
+      <FileName>Classes\CustomerManager.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Assignment5.Classes.Customer">
+    <Position X="14.75" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAACAECAAAAAAQAAAAAFAAAAAAAAAAAAg=</HashCode>
+      <FileName>Classes\Customer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Assignment5.Helpers.Debugger">
+    <Position X="18" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAA=</HashCode>
+      <FileName>Helpers\Debugger.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Assignment5.Helpers.EmailChecker">
+    <Position X="18" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Helpers\EmailChecker.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Assignment5.Helpers.EnumHelper">
+    <Position X="18" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Helpers\EnumHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="Assignment5.Interfaces.ICustomerManager">
+    <Position X="13" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAMAAAAAAAAAAABACAAiAAACAAAAAAAAIAAAABAAA=</HashCode>
+      <FileName>Interfaces\IManager.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
   <Enum Name="Assignment5.Enums.Country">
     <Position X="4" Y="1" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>qnFwbLfTIzrXut0A34Vk1nZ6Bhh6c7hWEzP2rB1D1b4=</HashCode>
+      <HashCode>inFxbLfTIzrWut0A3YVk1nZ6Bhh6c7hWE3P2rB1C1b4=</HashCode>
       <FileName>Enums\Countries.cs</FileName>
     </TypeIdentifier>
   </Enum>

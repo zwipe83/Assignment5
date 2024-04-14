@@ -25,7 +25,6 @@ namespace Assignment5.Classes
         public List<Customer> CustomerList
         {
             get => _customerList;
-            set => _customerList = value; //TODO: Add check Index method
         }
         #endregion
         #region Public Methods
@@ -35,10 +34,17 @@ namespace Assignment5.Classes
         /// <param name="contact"></param>
         public void AddCustomer(Contact contact)
         {
-            Customer customer = new Customer(contact);
-            CustomerList.Add(customer);
+            try
+            {
+                Customer customer = new Customer(contact);
+                CustomerList.Add(customer);
 
-            DEBUG_PRINT($"Customer list count: {CustomerList.Count}");
+                DEBUG_PRINT($"Customer list count: {CustomerList.Count}");
+            }
+            catch
+            {
+                throw;
+            }
         }
         /// <summary>
         /// Changes an existing <see cref="Customer"/> in <see cref="CustomerList"/> using a specific customer id of type <see cref="Guid"/>
@@ -104,12 +110,17 @@ namespace Assignment5.Classes
         /// <returns></returns>
         public Customer GetCustomer(Guid customerId)
         {
-            // Find the customer with the matching GUID in the CustomerManager.CustomerList
-            Customer selectedCustomer = new Customer(CustomerList.FirstOrDefault(customer => customer.CustomerId == customerId));
+            Customer customer = CustomerList.FirstOrDefault(customer => customer.CustomerId == customerId);
+
+            if (customer == null)
+            {
+                throw new InvalidOperationException($"Customer with customerId: {customerId} not found.");
+            }
+
+            Customer selectedCustomer = new Customer(customer); //Create copy
 
             return selectedCustomer ?? null;
         }
-
         public string[] GetCustomerInfoStrings()
         {
             throw new NotImplementedException(); //TODO: Implement this?
@@ -121,9 +132,16 @@ namespace Assignment5.Classes
         /// <returns></returns>
         public string GetAddressInfo(Guid customerId)
         {
-            Customer customer = GetCustomer(customerId);
+            try
+            {
+                Customer customer = GetCustomer(customerId);
 
-            return $"{customer.Contact.AddressData}";
+                return $"{customer.Contact.AddressData}";
+            }
+            catch 
+            {
+                throw;
+            }
         }
         /// <summary>
         /// Gets a specific <see cref="Customer"/> email info from <see cref="CustomerList"/> using a specific customer id of type <see cref="Guid"/>
@@ -132,9 +150,16 @@ namespace Assignment5.Classes
         /// <returns></returns>
         public string GetEmailInfo(Guid customerId)
         {
-            Customer customer = GetCustomer(customerId);
+            try 
+            {
+                Customer customer = GetCustomer(customerId);
 
-            return $"{customer.Contact.EmailData}";
+                return $"{customer.Contact.EmailData}";
+            }
+            catch 
+            {
+                throw;
+            }
         }
         /// <summary>
         /// Gets a specific <see cref="Customer"/> phone info from <see cref="CustomerList"/> using a specific customer id of type <see cref="Guid"/>
@@ -143,17 +168,16 @@ namespace Assignment5.Classes
         /// <returns></returns>
         public string GetPhoneInfo(Guid customerId)
         {
-            Customer customer = GetCustomer(customerId);
+            try
+            { 
+                Customer customer = GetCustomer(customerId);
 
-            return $"{customer.Contact.PhoneData}";
-        }
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <exception cref="NotImplementedException"></exception>
-        public void TestValues()
-        {
-            throw new NotImplementedException(); //TODO: Implement this?
+                return $"{customer.Contact.PhoneData}";
+            }
+            catch 
+            {
+                throw;
+            }
         }
         #endregion
         #region Private Methods

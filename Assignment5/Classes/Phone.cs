@@ -26,7 +26,13 @@ namespace Assignment5.Classes
         public string HomePhone
         {
             get => _homePhone;
-            set => _homePhone = value; //TODO: Check correct format?
+            set
+            { 
+                if(value != null)
+                {
+                    _homePhone = value;
+                }
+            }
         }
         /// <summary>
         ///  Property for getting and setting value to private field <see cref="_mobilePhone"/>
@@ -34,7 +40,13 @@ namespace Assignment5.Classes
         public string MobilePhone
         {
             get => _mobilePhone;
-            set => _mobilePhone = value; //TODO: Check correct format?
+            set 
+            { 
+                if(value != null)
+                {
+                    _mobilePhone = value;
+                }
+            }
         }
         #endregion
         #region Constructors

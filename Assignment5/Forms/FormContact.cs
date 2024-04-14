@@ -153,7 +153,6 @@ namespace Assignment5.Forms
         /// <param name="e"></param>
         private void btnCancelAdd_Click(object sender, EventArgs e)
         {
-            //TODO: Maybe add a specific position for the confirmation dialog?
             DialogResult result = MessageBox.Show("Are you sure you want to cancel?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
             {

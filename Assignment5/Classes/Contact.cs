@@ -40,40 +40,83 @@ namespace Assignment5.Classes
         /// </summary>
         public string FirstName
         {
-            get => _firstName;
-            set => _firstName = value;
+            get => _firstName ?? string.Empty;
+            set
+            {
+                if (!string.IsNullOrWhiteSpace(value))
+                {
+                    _firstName = value;
+                }
+                else
+                {
+                    if (string.IsNullOrWhiteSpace(LastName))
+                    {
+                        //throw new ArgumentException("Both first and last name cannot be empty or null.");
+                    }
+                }
+            }
         }
         /// <summary>
         /// Property for getting and setting value to private field <see cref="_lastName"/>
         /// </summary>
         public string LastName
         {
-            get => _lastName;
-            set => _lastName = value;
+            get => _lastName ?? string.Empty;
+            set
+            {
+                if (!string.IsNullOrWhiteSpace(value))
+                {
+                    _lastName = value;
+                }
+                else
+                {
+                    if (string.IsNullOrWhiteSpace(FirstName))
+                    {
+                        //throw new ArgumentException("Both last and first name cannot be empty or null.");
+                    }
+                }
+            }
         }
         /// <summary>
         /// Property for getting and setting value to private field <see cref="_address"/>
         /// </summary>
         public Address AddressData
         {
-            get => _address;
-            set => _address = value;
+            get => _address ?? new Address();
+            set {
+                if (value != null)
+                { 
+                    _address = value;
+                }
+            }
         }
         /// <summary>
         /// Property for getting and setting value to private field <see cref="_email"/>
         /// </summary>
         public Email EmailData
         {
-            get => _email;
-            set => _email = value;
+            get => _email ?? new Email();
+            set 
+            { 
+                if(value != null)
+                {
+                    _email = value;
+                }
+            }
         }
         /// <summary>
         /// Property for getting and setting value to private field <see cref="_phone"/>
         /// </summary>
         public Phone PhoneData
         {
-            get => _phone;
-            set => _phone = value;
+            get => _phone ?? new Phone();
+            set
+            {
+                if(value != null)
+                {
+                    _phone = value;
+                }
+            }
         }
         #endregion
         #region Constructors
@@ -105,11 +148,11 @@ namespace Assignment5.Classes
         /// <param name="objToCopyFrom"></param>
         public Contact(Contact objToCopyFrom)
         {
-            this.FirstName = objToCopyFrom.FirstName;
-            this.LastName = objToCopyFrom.LastName;
-            this.AddressData = objToCopyFrom.AddressData;
-            this.PhoneData = objToCopyFrom.PhoneData;
-            this.EmailData = objToCopyFrom.EmailData;
+            this.FirstName = objToCopyFrom.FirstName ?? string.Empty;
+            this.LastName = objToCopyFrom.LastName ?? string.Empty;
+            this.AddressData = objToCopyFrom.AddressData ?? new Address();
+            this.PhoneData = objToCopyFrom.PhoneData ?? new Phone();
+            this.EmailData = objToCopyFrom.EmailData ?? new Email();
         }
         #endregion
         #region Public Methods

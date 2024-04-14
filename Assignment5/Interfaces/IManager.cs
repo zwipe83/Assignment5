@@ -21,7 +21,6 @@ namespace Assignment5.Interfaces
         public string GetAddressInfo(Guid customerId);
         public string GetEmailInfo(Guid customerId);
         public string GetPhoneInfo(Guid customerId);
-        public void TestValues();
         #endregion
     }
 }

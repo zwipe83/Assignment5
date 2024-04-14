@@ -37,7 +37,13 @@ namespace Assignment5.Classes
         public string Street
         {
             get => _street;
-            set => _street = value; //TODO: Add validity checker?
+            set
+            {
+                if(!string.IsNullOrWhiteSpace(value))
+                {
+                    _street = value;
+                }
+            }
         }
         /// <summary>
         /// Property for getting and setting value to private field <see cref="_zipCode"/>
@@ -45,7 +51,13 @@ namespace Assignment5.Classes
         public string ZipCode
         {
             get => _zipCode;
-            set => _zipCode = value; //TODO: Add validity checker?
+            set
+            {
+                if (!string.IsNullOrWhiteSpace(value))
+                {
+                    _zipCode = value;
+                }
+            }
         }
         /// <summary>
         /// Property for getting and setting value to private field <see cref="_city"/>
@@ -53,7 +65,17 @@ namespace Assignment5.Classes
         public string City
         {
             get => _city;
-            set => _city = value; //TODO: Add validity checker?
+            set
+            {
+                if (!string.IsNullOrWhiteSpace(value) || value == string.Empty)
+                {
+                    _city = value;
+                }
+                else
+                {
+                    //throw new ArgumentException("City name cannot be empty or null.");
+                }
+            }
         }
         /// <summary>
         /// Property for getting and setting value to private field <see cref="_country"/>
@@ -61,7 +83,17 @@ namespace Assignment5.Classes
         public Country Country
         {
             get => _country;
-            set => _country = value; //TODO: Add validity checker?
+            set
+            {
+                if (Enum.IsDefined(typeof(Country), value))
+                {
+                    _country = value;
+                }
+                else
+                {
+                    //throw new ArgumentOutOfRangeException(nameof(value));
+                }
+            }
         }
         #endregion
         #region Constructors

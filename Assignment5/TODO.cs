@@ -9,8 +9,9 @@ namespace Assignment5
 {
     internal class TODO
     {
-        //TODO: Complete comments
-        //TODO: Clear contact details on, for example, delete.
-        //TODO: Add more checks in property setters?
+        //FIXED: Complete comments
+        //FIXED: Clear contact details on, for example, delete.
+        //FIXED: Add more checks in property setters?
+        //TODO: Maybe add more comments inside methods?
     }
 }
