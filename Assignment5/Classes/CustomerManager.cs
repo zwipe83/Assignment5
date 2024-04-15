@@ -121,10 +121,6 @@ namespace Assignment5.Classes
 
             return selectedCustomer ?? null;
         }
-        public string[] GetCustomerInfoStrings()
-        {
-            throw new NotImplementedException(); //TODO: Implement this?
-        }
         /// <summary>
         /// Gets a specific <see cref="Customer"/> address info from <see cref="CustomerList"/> using a specific customer id of type <see cref="Guid"/>
         /// </summary>

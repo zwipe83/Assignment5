@@ -17,7 +17,6 @@ namespace Assignment5.Interfaces
         public bool CheckIndex(Guid customerId);
         public void DeleteCustomer(Guid customerId);
         public Customer GetCustomer(Guid customerId);
-        public string[] GetCustomerInfoStrings();
         public string GetAddressInfo(Guid customerId);
         public string GetEmailInfo(Guid customerId);
         public string GetPhoneInfo(Guid customerId);

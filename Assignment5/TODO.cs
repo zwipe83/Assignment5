@@ -9,9 +9,11 @@ namespace Assignment5
 {
     internal class TODO
     {
+        //FIXED: Wpf? No time.
         //FIXED: Complete comments
         //FIXED: Clear contact details on, for example, delete.
         //FIXED: Add more checks in property setters?
         //TODO: Maybe add more comments inside methods?
+        //TODO: Better formatting in the listbox?
     }
 }

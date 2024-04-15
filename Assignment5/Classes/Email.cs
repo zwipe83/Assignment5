@@ -23,7 +23,6 @@ namespace Assignment5.Classes
         #endregion
         #region Constructors
         //Constructors are overloaded and called in a chain
-
         /// <summary>
         /// Default constructor - calls another constructor in this class
         /// </summary>
@@ -39,7 +38,6 @@ namespace Assignment5.Classes
             this.personalMail = theOther.personalMail;
             this.officeMail = theOther.officeMail;
         }
-
         /// <summary>
         /// Constructor with one parameter - calls the constructor with 
         /// two parameters, using a default value as the second argument.
@@ -90,8 +88,6 @@ namespace Assignment5.Classes
                 }
             }
         }
-
-
         /// <summary>
         /// Property related to officeMail field
         /// Both read and write access
@@ -119,21 +115,6 @@ namespace Assignment5.Classes
         #endregion
         #region Public Methods
         /// <summary>
-        /// This method prepares a format string that is in sync with the ToString
-        /// method.  It will be used in the MainForm as part of the heading for the ListBox
-        /// before customer information is added in the ListBox.
-        /// </summary>
-        /// <value></value>
-        /// <returns>A formatted string as heading for the values formatted in the ToString
-        /// method below.</returns>
-        /// <remarks></remarks>
-        public string GetToStringItemsHeadings
-        {
-            //TODO: Rework to use interpolation?
-            get { return string.Format("{0,-20} {1, -20}", "Office EmailData", "Private EmailData"); }
-        }
-
-        /// <summary>
         /// Delivers a formatted string with data stored in the object. The values will
         /// appear as columns.  Make sure that a font like "Courier New" is used in
         /// the control displaying this information.
@@ -142,10 +123,9 @@ namespace Assignment5.Classes
         /// <remarks></remarks>
         public override string ToString()
         {
-            string strOut = "\n" + "Emails" + "\n";
-            //TODO: Rework to use interpolation?
-            strOut += string.Format(" {0,-10} {1, -10}\n", "Private", personalMail);
-            strOut += string.Format(" {0,-10} {1, -10}\n\n", "Office", officeMail);
+            string strOut = $"\nEmails\n";
+            strOut += $"{"Private",-10} {personalMail,-10}\n";
+            strOut += $"{"Office",-10} {officeMail,-10}\n\n";
 
             return strOut;
         }

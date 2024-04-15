@@ -74,12 +74,10 @@ namespace Assignment5.Classes
         /// <returns></returns>
         public override string ToString()
         {
-            string strOut = "\n" + "Phone Numbers" + "\n";
-            //TODO: Rework to use interpolation?
-            strOut += string.Format(" {0,-10} {1, -10}\n", "Home", HomePhone);
-            strOut += string.Format(" {0,-10} {1, -10}\n\n", "Mobile", MobilePhone);
+            string strOut = $"\nPhone Numbers\n";
 
-            //DEBUG_PRINT($"Phone.ToString(): {strOut}");
+            strOut += $"{"Home",-10} {HomePhone,-10}\n";
+            strOut += $"{"Mobile",-10} {MobilePhone,-10}\n\n";
 
             return strOut;
         }
