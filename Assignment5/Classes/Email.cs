@@ -82,10 +82,6 @@ namespace Assignment5.Classes
 
                     DEBUG_PRINT($"EmailAddress.Address - Correct address: {value}");
                 }
-                else
-                {
-                    DEBUG_PRINT($"EmailAddress.Address - Incorrect address: {value}");
-                }
             }
         }
         /// <summary>
@@ -105,10 +101,6 @@ namespace Assignment5.Classes
                 {
                     officeMail = value;
                     DEBUG_PRINT($"EmailAddress.Address - Correct address: {value}");
-                }
-                else
-                {
-                    DEBUG_PRINT($"EmailAddress.Address - Incorrect address: {value}");
                 }
             }
         }

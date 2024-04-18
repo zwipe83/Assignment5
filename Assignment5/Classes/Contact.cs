@@ -47,13 +47,6 @@ namespace Assignment5.Classes
                 {
                     _firstName = value;
                 }
-                else
-                {
-                    if (string.IsNullOrWhiteSpace(LastName))
-                    {
-                        //throw new ArgumentException("Both first and last name cannot be empty or null.");
-                    }
-                }
             }
         }
         /// <summary>
@@ -68,13 +61,6 @@ namespace Assignment5.Classes
                 {
                     _lastName = value;
                 }
-                else
-                {
-                    if (string.IsNullOrWhiteSpace(FirstName))
-                    {
-                        //throw new ArgumentException("Both last and first name cannot be empty or null.");
-                    }
-                }
             }
         }
         /// <summary>
@@ -83,7 +69,8 @@ namespace Assignment5.Classes
         public Address AddressData
         {
             get => _address ?? new Address();
-            set {
+            set 
+            {
                 if (value != null)
                 { 
                     _address = value;
@@ -158,6 +145,7 @@ namespace Assignment5.Classes
         #region Public Methods
         /// <summary>
         /// Checks data to see if a minimum fulfilled
+        /// A first or last name, city and country needs to be added
         /// </summary>
         /// <returns></returns>
         public bool CheckData()

@@ -42,6 +42,7 @@ namespace Assignment5.Forms
         /// </summary>
         ~FormMain()
         {
+            //Just wanted to add one of these to test it out.
         }
         #endregion
         #region Private Methods
@@ -170,7 +171,7 @@ namespace Assignment5.Forms
         /// <param name="selectedCustomer"></param>
         private void UpdateContactDetails(Guid customerId, Customer selectedCustomer)
         {
-            grpContactDetails.Text = $"Contact Details - {selectedCustomer.Contact.LastName.ToUpper()},{selectedCustomer.Contact.FirstName}";
+            grpContactDetails.Text = $"Contact Details - {selectedCustomer.Contact.LastName.ToUpper()}, {selectedCustomer.Contact.FirstName}";
             lblContactAddress.Text = $"{CustomerManager.GetAddressInfo(customerId)}";
             lblContactEmails.Text = $"{CustomerManager.GetEmailInfo(customerId)}";
             lblContactPhoneNumbers.Text = $"{CustomerManager.GetPhoneInfo(customerId)}";

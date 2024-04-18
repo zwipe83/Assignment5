@@ -14,7 +14,7 @@ namespace Assignment5.Enums
     /// </summary>
     public enum Country
     {
-        Afghanistan,
+        Afghanistan = 0,
         Albania,
         Algeria,
         Andorra,

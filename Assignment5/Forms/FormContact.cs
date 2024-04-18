@@ -30,7 +30,13 @@ namespace Assignment5.Forms
         public Contact ContactData
         {
             get => _contact;
-            set => _contact = value;
+            set
+            {
+                if(value != null) 
+                { 
+                    _contact = value;
+                }
+            }
         }
         #endregion
         #region Constructors
@@ -75,7 +81,7 @@ namespace Assignment5.Forms
             txtFirstName.Focus();
         }
         /// <summary>
-        /// Gets country descriptions from Enum of type <see cref="Country"/>
+        /// Gets country descriptions as <see cref="string"/> from Enum of type <see cref="Country"/>
         /// </summary>
         private string[] GetCountryDescriptions()
         {

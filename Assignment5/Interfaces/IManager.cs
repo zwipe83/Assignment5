@@ -9,6 +9,9 @@ using Assignment5.Classes;
 
 namespace Assignment5.Interfaces
 {
+    /// <summary>
+    /// Trying out an interface to see how it works, it's pretty cool!
+    /// </summary>
     internal interface ICustomerManager
     {
         #region Public Methods

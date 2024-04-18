@@ -104,7 +104,7 @@ namespace Assignment5.Classes
         /// <returns></returns>
         public override string ToString()
         {
-            return $"{CustomerId,-38}{LastName,12},{FirstName,-12}{MobilePhone,-15}{WorkEmail,-15}";
+            return $"{CustomerId,-38}{LastName,12}, {FirstName,-12}{MobilePhone,-15}{WorkEmail,25}";
         }
         #endregion
     }
